@@ -11,7 +11,7 @@ export const styles = StyleSheet.create({
   },
 
   text: {
-    color: "#FBF2CF",
+    color: "#fff",
     textAlign: "center",
     fontSize: 14,
     fontStyle: "normal",
@@ -21,9 +21,15 @@ export const styles = StyleSheet.create({
   btnWithIconContainer: {
     paddingVertical: 10,
     paddingHorizontal: 15,
-    flexDirection: "column",
+    flexDirection: "row",
     justifyContent: "center",
     alignItems: "center",
+    backgroundColor: "pink",
+    borderRadius: 50,
     gap: 10,
+  },
+  image: {
+    width: 24,
+    height: 24,
   },
 });

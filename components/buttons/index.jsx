@@ -1,7 +1,7 @@
-import { Pressable, Text, View } from "react-native";
+import { Pressable, Text, View, Image } from "react-native";
 import { styles } from "./buttons.styles";
 
-export const Button = ({ buttonType, children }) => {
+export const Button = ({ buttonType, children, image }) => {
   if (buttonType === "normal") {
     return (
       <View style={styles.container}>
@@ -13,8 +13,11 @@ export const Button = ({ buttonType, children }) => {
   }
   if (buttonType === "icon") {
     return (
-      <View style={styles.container}>
-        <Pressable style={styles.text}>{children}</Pressable>
+      <View style={styles.btnWithIconContainer}>
+        <Image style={styles.image} source={image} />
+        <Pressable>
+          <Text style={styles.text}>{children}</Text>
+        </Pressable>
       </View>
     );
   }

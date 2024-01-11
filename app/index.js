@@ -3,6 +3,7 @@ import { View, StyleSheet, Text } from "react-native";
 import { Button } from "../components/buttons";
 // import Home from "../screens/home";
 import Input from "../components/input";
+import { icons } from "../icons";
 
 export default function SignIn() {
   return (
@@ -31,6 +32,40 @@ export default function SignIn() {
           Sign in
         </Link>
       </Button>
+
+      <Link
+        style={styles.forgotPassWord}
+        href={{ pathname: "signup", params: { name: "Sign Up" } }}>
+        Forgot Password
+      </Link>
+      <Text style={styles.continueText}>- OR Continue with -</Text>
+      <View
+        style={{
+          flexDirection: "row",
+          alignItems: "center",
+          justifyContent: "space-between",
+          width: 250,
+          marginBottom: 24,
+        }}>
+        <Button buttonType='icon' image={icons.googleImage}>
+          Google
+        </Button>
+        <Button buttonType='icon' image={icons.facebookImage}>
+          Facebook
+        </Button>
+      </View>
+      <Text style={styles.createAccount}>
+        <Text style={{ color: "#575757", fontWeight: "400" }}>
+          {" "}
+          Create An Account
+        </Text>
+        {"  "}
+        <Link
+          style={{ color: "#EB0029", fontWeight: "600" }}
+          href={{ pathname: "signup", params: { name: "Sign Up" } }}>
+          Sign Up
+        </Link>
+      </Text>
     </View>
   );
 }
@@ -40,7 +75,29 @@ const styles = StyleSheet.create({
     flex: 1,
     backgroundColor: "#fff",
     alignItems: "center",
-    justifyContent: "center",
+    // justifyContent: "center",
+    paddingTop: 82,
     paddingHorizontal: 24,
+  },
+  forgotPassWord: {
+    color: "#EB0029",
+    fontSize: 12,
+    fontStyle: "normal",
+    fontWeight: "400",
+    textDecorationLine: "underline",
+    marginTop: 12,
+    marginBottom: 24,
+  },
+  continueText: {
+    color: "#575757",
+    fontSize: 12,
+    fontStyle: "normal",
+    fontWeight: "300",
+    marginBottom: 20,
+    textAlign: "center",
+  },
+  createAccount: {
+    fontSize: 14,
+    fontStyle: "normal",
   },
 });
