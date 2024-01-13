@@ -1,10 +1,16 @@
-import { View, StyleSheet, Text } from "react-native";
+import { View, StyleSheet, Text, Image, Pressable } from "react-native";
+import { useState } from "react";
 import { Stack, useLocalSearchParams, Link } from "expo-router";
+import * as ImagePicker from "expo-image-picker";
+
 import { Button } from "../components/buttons";
 import Input from "../components/input";
 
 export default function SignUp() {
   const params = useLocalSearchParams();
+
+  // Declare a local state to manage selected image uri
+  const [selectedImage, setSelectedImage] = useState(null);
 
   const pickImageAsync = async () => {
     // Select Image
@@ -16,13 +22,13 @@ export default function SignUp() {
     // Check if image is selected
     if (!result.canceled) {
       setSelectedImage(result.assets[0].uri);
-      setShowAppOptions(true);
-      // console.log(selectedImage);
     } else {
       alert("You did not select any image.");
     }
   };
 
+  // Image URL
+  const imageURL = require("../assets/facebook.png");
   return (
     <View style={styles.container}>
       <Stack.Screen
@@ -30,9 +36,13 @@ export default function SignUp() {
           title: params.name,
         }}
       />
-      <View style={styles.addPhoto}>
-        <Text>Add Photo</Text>
-      </View>
+      <Pressable style={styles.addPhoto} onPress={pickImageAsync}>
+        {selectedImage ? (
+          <Image source={{ uri: selectedImage }} style={styles.image} />
+        ) : (
+          <Text>Add Photo</Text>
+        )}
+      </Pressable>
       <View style={{ marginBottom: 16, width: "100%" }}>
         <Input label='Full Name' placeholder='Type your full name' />
       </View>
@@ -88,5 +98,10 @@ const styles = StyleSheet.create({
     borderColor: "#8D92A3",
     borderWidth: 1,
     borderStyle: "dashed",
+  },
+  image: {
+    width: 150,
+    height: 150,
+    borderRadius: 150,
   },
 });
