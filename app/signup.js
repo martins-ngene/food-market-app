@@ -53,9 +53,9 @@ export default function SignUp() {
         <Input label='Password' placeholder='Type your password' />
       </View>
       <Button buttonType='normal'>
-        {/* <Link href={{ pathname: "signup", params: { name: "Sign Up" } }}> */}
-        Continue
-        {/* </Link> */}
+        <Link href={{ pathname: "address", params: { name: "Address" } }}>
+          Continue
+        </Link>
       </Button>
       <Text style={styles.createAccount}>
         <Text style={{ color: "#575757", fontWeight: "400" }}>
