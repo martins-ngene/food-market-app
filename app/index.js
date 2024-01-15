@@ -1,11 +1,20 @@
 import { Link, Stack } from "expo-router";
 import { View, StyleSheet, Text } from "react-native";
+
 import { Button } from "../components/buttons";
-// import Home from "../screens/home";
 import Input from "../components/input";
 import { icons } from "../icons";
 
+import { useFonts, Poppins_400Regular } from "@expo-google-fonts/poppins";
+
 export default function SignIn() {
+  let [fontsLoaded] = useFonts({
+    Poppins_400Regular,
+  });
+
+  if (!fontsLoaded) {
+    return <Text>Loading...</Text>;
+  }
   return (
     <View style={styles.container}>
       <Stack.Screen
@@ -55,13 +64,22 @@ export default function SignIn() {
         </Button>
       </View>
       <Text style={styles.createAccount}>
-        <Text style={{ color: "#575757", fontWeight: "400" }}>
+        <Text
+          style={{
+            color: "#575757",
+            fontWeight: "400",
+            fontFamily: "Poppins_400Regular",
+          }}>
           {" "}
           Create An Account
         </Text>
         {"  "}
         <Link
-          style={{ color: "#EB0029", fontWeight: "600" }}
+          style={{
+            color: "#EB0029",
+            fontWeight: "600",
+            fontFamily: "Poppins_400Regular",
+          }}
           href={{ pathname: "signup", params: { name: "Sign Up" } }}>
           Sign Up
         </Link>
@@ -75,9 +93,9 @@ const styles = StyleSheet.create({
     flex: 1,
     backgroundColor: "#fff",
     alignItems: "center",
-    // justifyContent: "center",
     paddingTop: 82,
     paddingHorizontal: 24,
+    fontFamily: "Poppins_400Regular",
   },
   forgotPassWord: {
     color: "#EB0029",
@@ -87,6 +105,7 @@ const styles = StyleSheet.create({
     textDecorationLine: "underline",
     marginTop: 12,
     marginBottom: 24,
+    fontFamily: "Poppins_400Regular",
   },
   continueText: {
     color: "#575757",
@@ -95,6 +114,7 @@ const styles = StyleSheet.create({
     fontWeight: "300",
     marginBottom: 20,
     textAlign: "center",
+    fontFamily: "Poppins_400Regular",
   },
   createAccount: {
     fontSize: 14,

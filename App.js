@@ -25,5 +25,6 @@ const styles = StyleSheet.create({
     alignItems: "center",
     justifyContent: "center",
     paddingHorizontal: 24,
+    fontFamily: "Poppins_400Regular",
   },
 });

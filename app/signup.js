@@ -40,7 +40,7 @@ export default function SignUp() {
         {selectedImage ? (
           <Image source={{ uri: selectedImage }} style={styles.image} />
         ) : (
-          <Text>Add Photo</Text>
+          <Text style={{ fontFamily: "Poppins_400Regular" }}>Add Photo</Text>
         )}
       </Pressable>
       <View style={{ marginBottom: 16, width: "100%" }}>
@@ -58,13 +58,22 @@ export default function SignUp() {
         </Link>
       </Button>
       <Text style={styles.createAccount}>
-        <Text style={{ color: "#575757", fontWeight: "400" }}>
+        <Text
+          style={{
+            color: "#575757",
+            fontWeight: "400",
+            fontFamily: "Poppins_400Regular",
+          }}>
           {" "}
           I Already Have an Account
         </Text>
         {"  "}
         <Link
-          style={{ color: "#EB0029", fontWeight: "600" }}
+          style={{
+            color: "#EB0029",
+            fontWeight: "600",
+            fontFamily: "Poppins_400Regular",
+          }}
           href={{ pathname: "signup", params: { name: "Sign Up" } }}>
           Log in
         </Link>
@@ -98,6 +107,7 @@ const styles = StyleSheet.create({
     borderColor: "#8D92A3",
     borderWidth: 1,
     borderStyle: "dashed",
+    fontFamily: "Poppins_400Regular",
   },
   image: {
     width: 150,

@@ -31,13 +31,22 @@ export default function SignUp() {
         <Link href={{ pathname: "completed" }}>Sign Up Now</Link>
       </Button>
       <Text style={styles.createAccount}>
-        <Text style={{ color: "#575757", fontWeight: "400" }}>
+        <Text
+          style={{
+            color: "#575757",
+            fontWeight: "400",
+            fontFamily: "Poppins_400Regular",
+          }}>
           {" "}
           I Already Have an Account
         </Text>
         {"  "}
         <Link
-          style={{ color: "#EB0029", fontWeight: "600" }}
+          style={{
+            color: "#EB0029",
+            fontWeight: "600",
+            fontFamily: "Poppins_400Regular",
+          }}
           href={{ pathname: "signup", params: { name: "Sign Up" } }}>
           Log in
         </Link>

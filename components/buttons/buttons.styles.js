@@ -16,6 +16,7 @@ export const styles = StyleSheet.create({
     fontSize: 14,
     fontStyle: "normal",
     fontWeight: "500",
+    fontFamily: "Poppins_400Regular",
   },
 
   btnWithIconContainer: {

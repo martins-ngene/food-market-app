@@ -60,6 +60,7 @@ const styles = StyleSheet.create({
     fontSize: 20,
     fontStyle: "normal",
     fontWeight: "400",
+    fontFamily: "Poppins_400Regular",
   },
   text: {
     marginBottom: 30,
@@ -68,5 +69,6 @@ const styles = StyleSheet.create({
     fontSize: 14,
     fontStyle: "normal",
     fontWeight: "300",
+    fontFamily: "Poppins_400Regular",
   },
 });
