@@ -8,7 +8,7 @@
     "scheme": "your-app-scheme",
     "userInterfaceStyle": "light",
     "splash": {
-      "image": "./assets/food_market.png",
+      "image": "./assets/splash.png",
       "resizeMode": "contain",
       "backgroundColor": "#EB0029"
     },
