@@ -1,13 +1,15 @@
 import { View, StyleSheet, Text, Image, Pressable } from "react-native";
 import { useState } from "react";
-import { Stack, useLocalSearchParams, Link } from "expo-router";
+import { Stack, useLocalSearchParams, Link, useNavigation } from "expo-router";
 import * as ImagePicker from "expo-image-picker";
 
 import { Button } from "../components/buttons";
 import Input from "../components/input";
+import Header from "../components/header";
 
 export default function SignUp() {
   const params = useLocalSearchParams();
+  const navigation = useNavigation();
 
   // Declare a local state to manage selected image uri
   const [selectedImage, setSelectedImage] = useState(null);
@@ -34,6 +36,14 @@ export default function SignUp() {
       <Stack.Screen
         options={{
           title: params.name,
+          headerTitle: () => (
+            <Header
+              onPress={() => navigation.goBack()}
+              headerText='Sign Up'
+              subText='Find your best ever meal'
+              isBackBtn={true}
+            />
+          ),
         }}
       />
       <Pressable style={styles.addPhoto} onPress={pickImageAsync}>

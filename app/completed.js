@@ -11,7 +11,7 @@ export default function SignUp() {
     <View style={styles.container}>
       <Stack.Screen
         options={{
-          title: params.name,
+          headerShown: false,
         }}
       />
       <Image style={styles.image} source={icons.completeSignUp} />

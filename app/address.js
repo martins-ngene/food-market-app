@@ -1,17 +1,27 @@
 import { View, StyleSheet, Text } from "react-native";
-import { Stack, useLocalSearchParams, Link } from "expo-router";
+import { Stack, useLocalSearchParams, Link, useNavigation } from "expo-router";
 
 import { Button } from "../components/buttons";
 import Input from "../components/input";
+import Header from "../components/header";
 
 export default function SignUp() {
   const params = useLocalSearchParams();
+  const navigation = useNavigation();
 
   return (
     <View style={styles.container}>
       <Stack.Screen
         options={{
           title: params.name,
+          headerTitle: () => (
+            <Header
+              onPress={() => navigation.goBack()}
+              headerText='Address'
+              subText="Make sure it's valid"
+              isBackBtn={true}
+            />
+          ),
         }}
       />
 

@@ -1,11 +1,11 @@
 import { Link, Stack } from "expo-router";
 import { View, StyleSheet, Text } from "react-native";
+import { useFonts, Poppins_400Regular } from "@expo-google-fonts/poppins";
 
 import { Button } from "../components/buttons";
 import Input from "../components/input";
 import { icons } from "../icons";
-
-import { useFonts, Poppins_400Regular } from "@expo-google-fonts/poppins";
+import Header from "../components/header";
 
 export default function SignIn() {
   let [fontsLoaded] = useFonts({
@@ -19,13 +19,13 @@ export default function SignIn() {
     <View style={styles.container}>
       <Stack.Screen
         options={{
-          // https://reactnavigation.org/docs/headers#setting-the-header-title
-          title: "Sign In", // https://reactnavigation.org/docs/headers#adjusting-header-styles
-          headerStyle: { backgroundColor: "#f4511e" },
-          headerTintColor: "#fff",
-          headerTitleStyle: {
-            fontWeight: "bold",
-          },
+          headerTitle: () => (
+            <Header
+              headerText='Sign In'
+              subText='Find your best ever meal'
+              isBackBtn={false}
+            />
+          ),
         }}
       />
 
