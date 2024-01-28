@@ -1,12 +1,10 @@
 import { View, StyleSheet, Text, Image } from "react-native";
-import { Stack, useLocalSearchParams, Link } from "expo-router";
+import { Stack, Link } from "expo-router";
 
 import { Button } from "../components/buttons";
 import { icons } from "../icons";
 
 export default function SignUp() {
-  const params = useLocalSearchParams();
-
   return (
     <View style={styles.container}>
       <Stack.Screen
@@ -24,9 +22,9 @@ export default function SignUp() {
 
       <View style={styles.btnContainer}>
         <Button buttonType='normal'>
-          {/* <Link href={{ pathname: "signup", params: { name: "Sign Up" } }}> */}
-          Find Foods
-          {/* </Link> */}
+          <Link href={{ pathname: "tabs", params: { name: "Tabs" } }}>
+            Find Foods
+          </Link>
         </Button>
       </View>
     </View>
