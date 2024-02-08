@@ -53,7 +53,7 @@ export default function SignIn() {
           flexDirection: "row",
           alignItems: "center",
           justifyContent: "space-between",
-          width: 250,
+          width: 280,
           marginBottom: 24,
         }}>
         <Button buttonType='icon' image={icons.googleImage}>

@@ -25,9 +25,10 @@ export const styles = StyleSheet.create({
     flexDirection: "row",
     justifyContent: "center",
     alignItems: "center",
-    backgroundColor: "pink",
+    backgroundColor: "#028B95",
     borderRadius: 50,
     gap: 10,
+    width: 130,
   },
   image: {
     width: 24,
