@@ -1,11 +1,18 @@
 import { Stack } from "expo-router";
-import { StyleSheet, Text, View, Image } from "react-native";
+import {
+  StyleSheet,
+  Text,
+  View,
+  Image,
+  SafeAreaView,
+  ScrollView,
+  StatusBar,
+} from "react-native";
 import { icons } from "../icons";
-import StarRating from "react-native-star-rating-widget";
-import { useState } from "react";
+import ProductCard from "../components/cards/ProductCard";
+import MenuCard from "../components/cards/MenuCard";
 
 const Home = () => {
-  const [rating, setRating] = useState(0);
   return (
     <View style={styles.container}>
       <Stack.Screen
@@ -22,20 +29,28 @@ const Home = () => {
           <Image style={styles.image} source={icons.avatar} />
         </View>
       </View>
-      <View style={styles.cardContainer}>
-        <View style={[styles.card, styles.shadowProp]}>
-          <Image style={styles.cardImg} source={icons.card} />
-          <View style={styles.cardInfo}>
-            <Text style={styles.cardHeader}>Cherry Healthy</Text>
-            <StarRating
-              rating={rating}
-              onChange={setRating}
-              color='#EB0029'
-              starSize={16}
-            />
-          </View>
-        </View>
-      </View>
+      <SafeAreaView style={styles.cardContainer}>
+        <ScrollView horizontal={true} showsHorizontalScrollIndicator={false}>
+          <ProductCard />
+          <ProductCard />
+          <ProductCard />
+          <ProductCard />
+        </ScrollView>
+      </SafeAreaView>
+      <SafeAreaView style={styles.menuContainer}>
+        <ScrollView
+          style={styles.ScrollView}
+          showsVerticalScrollIndicator={false}>
+          <MenuCard />
+          <MenuCard />
+          <MenuCard />
+          <MenuCard />
+          <MenuCard />
+          <MenuCard />
+          <MenuCard />
+          <MenuCard />
+        </ScrollView>
+      </SafeAreaView>
     </View>
   );
 };
@@ -71,39 +86,22 @@ const styles = StyleSheet.create({
   image: {
     width: 50,
     height: 50,
-  },
-  card: {
-    width: 200,
-    height: 210,
     borderRadius: 8,
-    // borderColor: "#000",
-    // borderWidth: 1,
   },
-  shadowProp: {
-    shadowColor: "#8D92A3",
-    shadowOpacity: 0.1,
-    // shadowOffset: { width: -2, height: 4 },
-    shadowRadius: 1,
-    // shadowOffset: { width: -2, height: 4 },
-    // shadowOpacity: 0.2,
-    // shadowRadius: 3,
-    elevation: 0.4,
-  },
+
   cardContainer: {
     marginLeft: 24,
     marginTop: 78,
+    marginBottom: 24,
+    flexDirection: "row",
+    alignItems: "center",
   },
-  cardImg: {
-    width: 200,
-    height: 140,
-    borderRadius: 8,
+  menuContainer: {
+    marginTop: 24,
+    paddingHorizontal: 24,
+    flex: 1,
   },
-  cardHeader: {
-    fontSize: 16,
-    fontStyle: "normal",
-    fontFamily: "Poppins_400Regular",
-  },
-  cardInfo: {
-    padding: 8,
+  ScrollView: {
+    flex: 1,
   },
 });
