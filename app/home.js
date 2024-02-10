@@ -8,11 +8,77 @@ import {
   ScrollView,
   StatusBar,
 } from "react-native";
+import { useState } from "react";
+import { useWindowDimensions } from "react-native";
+import { TabView, SceneMap, TabBar } from "react-native-tab-view";
+
 import { icons } from "../icons";
 import ProductCard from "../components/cards/ProductCard";
 import MenuCard from "../components/cards/MenuCard";
 
+const FirstRoute = () => (
+  <SafeAreaView style={styles.menuContainer}>
+    <ScrollView style={styles.ScrollView} showsVerticalScrollIndicator={false}>
+      <MenuCard />
+      <MenuCard />
+      <MenuCard />
+    </ScrollView>
+  </SafeAreaView>
+);
+
+const SecondRoute = () => (
+  <SafeAreaView style={styles.menuContainer}>
+    <ScrollView style={styles.ScrollView} showsVerticalScrollIndicator={false}>
+      <MenuCard />
+      <MenuCard />
+      <MenuCard />
+    </ScrollView>
+  </SafeAreaView>
+);
+
+const ThirdRoute = () => (
+  <SafeAreaView style={styles.menuContainer}>
+    <ScrollView style={styles.ScrollView} showsVerticalScrollIndicator={false}>
+      <MenuCard />
+      <MenuCard />
+      <MenuCard />
+    </ScrollView>
+  </SafeAreaView>
+);
+
+const renderScene = SceneMap({
+  first: FirstRoute,
+  second: SecondRoute,
+  third: ThirdRoute,
+});
+
 const Home = () => {
+  // TabView Layout
+  const layout = useWindowDimensions();
+
+  // TabView Index State Manager
+  const [index, setIndex] = useState(0);
+
+  // TabView Routes State Manager
+  const [routes] = useState([
+    { key: "first", title: "New Taste" },
+    { key: "second", title: "Popular" },
+    { key: "third", title: "Recommended" },
+  ]);
+
+  const renderTabBar = props => (
+    <TabBar
+      {...props}
+      indicatorStyle={{ backgroundColor: "#020202" }}
+      style={{
+        backgroundColor: "#fff",
+        // marginHorizontal: 16,
+      }}
+      activeColor='#020202'
+      inactiveColor='#8D92A3'
+    />
+  );
+
   return (
     <View style={styles.container}>
       <Stack.Screen
@@ -37,20 +103,15 @@ const Home = () => {
           <ProductCard />
         </ScrollView>
       </SafeAreaView>
-      <SafeAreaView style={styles.menuContainer}>
-        <ScrollView
-          style={styles.ScrollView}
-          showsVerticalScrollIndicator={false}>
-          <MenuCard />
-          <MenuCard />
-          <MenuCard />
-          <MenuCard />
-          <MenuCard />
-          <MenuCard />
-          <MenuCard />
-          <MenuCard />
-        </ScrollView>
-      </SafeAreaView>
+      {/* <View style={styles.tabViewContainer}> */}
+      <TabView
+        renderTabBar={renderTabBar}
+        navigationState={{ index, routes }}
+        renderScene={renderScene}
+        onIndexChange={setIndex}
+        initialLayout={{ width: layout.width }}
+      />
+      {/* </View> */}
     </View>
   );
 };
@@ -103,5 +164,9 @@ const styles = StyleSheet.create({
   },
   ScrollView: {
     flex: 1,
+  },
+  tabViewContainer: {
+    backgroundColor: "#fff",
+    marginHorizontal: 20,
   },
 });
