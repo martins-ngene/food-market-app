@@ -1,7 +1,7 @@
 import { StyleSheet, Text, View, Image, Pressable } from "react-native";
 import StarRating from "react-native-star-rating-widget";
 import { useState } from "react";
-import { router, useNavigation } from "expo-router";
+import { useNavigation } from "expo-router";
 
 import { icons } from "../../icons";
 
@@ -12,7 +12,6 @@ const MenuCard = () => {
     <Pressable
       style={styles.container}
       onPress={() => navigation.navigate("food-details")}>
-      {/* <Link href='/food-details'> */}
       <Image style={styles.cardImg} source={icons.card} />
       <View style={styles.text}>
         <View style={styles.details}>
@@ -29,7 +28,6 @@ const MenuCard = () => {
           <Text style={styles.ratingValue}>{rating}</Text>
         </View>
       </View>
-      {/* </Link> */}
     </Pressable>
   );
 };

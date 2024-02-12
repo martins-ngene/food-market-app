@@ -1,10 +1,10 @@
-import { Image, Pressable, StyleSheet, Text, View } from "react-native";
+import { Image, Pressable, StyleSheet, Text, View, Link } from "react-native";
 import React from "react";
 import { Stack, useNavigation } from "expo-router";
 import { StarRatingDisplay } from "react-native-star-rating-widget";
 
-// import Header from "../components/header";
 import { icons } from "../icons";
+import { Button } from "../components/buttons";
 
 const FoodDetails = () => {
   const navigation = useNavigation();
@@ -37,6 +37,23 @@ const FoodDetails = () => {
           pola makan yang cukup tinggi dengan mengutamakan diet yang sehat dan
           teratur.
         </Text>
+        <View style={styles.ingredients}>
+          <Text style={styles.subHeading}>Ingredients:</Text>
+          <Text style={styles.text}>Seledri, telur, blueberry, madu.</Text>
+        </View>
+        <View style={styles.footer}>
+          <View>
+            <Text style={styles.text}>Total Price:</Text>
+            <Text style={styles.heading}>IDR 12.289.000</Text>
+          </View>
+          <View style={styles.orderBtnContainer}>
+            <Button buttonType='normal'>
+              {/* <Link href={{ pathname: "tabs", params: { name: "Tabs" } }}> */}
+              Order Now
+              {/* </Link> */}
+            </Button>
+          </View>
+        </View>
       </View>
     </View>
   );
@@ -60,8 +77,8 @@ const styles = StyleSheet.create({
   },
   btn: {
     backgroundColor: "#EB0029",
-    width: 24,
-    height: 24,
+    width: 32,
+    height: 32,
     alignItems: "center",
     justifyContent: "center",
     borderRadius: 4,
@@ -88,9 +105,31 @@ const styles = StyleSheet.create({
     justifyContent: "space-between",
     marginBottom: 16,
   },
+  ratingValue: {
+    fontSize: 12,
+    fontStyle: "normal",
+    fontFamily: "Poppins_400Regular",
+  },
   heading: {
     fontSize: 16,
     fontStyle: "normal",
     fontFamily: "Poppins_400Regular",
+  },
+  subHeading: {
+    fontSize: 14,
+    fontStyle: "normal",
+    fontFamily: "Poppins_400Regular",
+  },
+  ingredients: {
+    marginTop: 12,
+  },
+  orderBtnContainer: {
+    width: 160,
+  },
+  footer: {
+    marginTop: 32,
+    flexDirection: "row",
+    alignItems: "center",
+    justifyContent: "space-between",
   },
 });
