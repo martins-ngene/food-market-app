@@ -1,9 +1,15 @@
 import { Pressable, StyleSheet, Text, View, Image } from "react-native";
 import { icons } from "../../icons";
 
-const Header = ({ onPress, headerText, subText, isBackBtn }) => {
+const Header = ({
+  onPress,
+  headerText,
+  subText,
+  isBackBtn,
+  containerStyle,
+}) => {
   return (
-    <View style={styles.container}>
+    <View style={[styles.container, containerStyle]}>
       {isBackBtn && (
         <View style={styles.btnContainer}>
           <Pressable style={styles.btn} onPress={onPress}>
@@ -23,7 +29,7 @@ export default Header;
 
 const styles = StyleSheet.create({
   container: {
-    backgroundColor: "#fff",
+    backgroundColor: "transparent",
     width: "100%",
     height: 108,
     flexDirection: "row",
