@@ -6,7 +6,6 @@ import {
   Image,
   SafeAreaView,
   ScrollView,
-  StatusBar,
 } from "react-native";
 import { useState } from "react";
 import { useWindowDimensions } from "react-native";
@@ -72,7 +71,6 @@ const Home = () => {
       indicatorStyle={{ backgroundColor: "#020202" }}
       style={{
         backgroundColor: "#fff",
-        // marginHorizontal: 16,
       }}
       activeColor='#020202'
       inactiveColor='#8D92A3'
