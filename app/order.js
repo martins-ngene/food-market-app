@@ -55,15 +55,16 @@ const Order = () => {
   ]);
 
   // TabBar Renderer
-  const renderTabBar = props => (
+  const renderTabBar = (props) => (
     <TabBar
       {...props}
       indicatorStyle={{ backgroundColor: "#020202" }}
       style={{
         backgroundColor: "#fff",
       }}
-      activeColor='#020202'
-      inactiveColor='#8D92A3'
+      activeColor="#020202"
+      inactiveColor="#8D92A3"
+      labelStyle={{ fontSize: 12 }}
     />
   );
   return (
@@ -72,9 +73,10 @@ const Order = () => {
         options={{
           title: params.name,
           headerTitle: () => (
-            <Header              onPress={() => navigation.goBack()}
-              headerText='Your Orders'
-              subText='Wait for the best meal'
+            <Header
+              onPress={() => navigation.goBack()}
+              headerText="Your Orders"
+              subText="Wait for the best meal"
               isBackBtn={false}
             />
           ),

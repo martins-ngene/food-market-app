@@ -9,12 +9,12 @@ export default function App() {
     <NavigationContainer>
       <View style={styles.container}>
         <View style={{ marginBottom: 16, width: "100%" }}>
-          <Input label='Email Address' placeholder='Type your email address' />
+          <Input label="Email Address" placeholder="Type your email address" />
         </View>
         <View style={{ marginBottom: 24, width: "100%" }}>
-          <Input label='Password' placeholder='Type your password' />
+          <Input label="Password" placeholder="Type your password" />
         </View>
-        <Button label='Sign in' buttonType='normal' />
+        <Button label="Sign in" buttonType="normal" />
       </View>
     </NavigationContainer>
   );

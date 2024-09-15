@@ -14,7 +14,7 @@ const FoodDetails = () => {
   //   Rating Value
   let rating = 3;
 
-  const changeQtyVal = action => {
+  const changeQtyVal = (action) => {
     if (action === "increment") {
       setQtyValue(qtyValue + 1);
     }
@@ -44,7 +44,7 @@ const FoodDetails = () => {
             <View style={styles.rating}>
               <StarRatingDisplay
                 rating={rating}
-                color='#EB0029'
+                color="#EB0029"
                 starSize={16}
               />
               <Text style={styles.ratingValue}>{rating}</Text>
@@ -75,7 +75,7 @@ const FoodDetails = () => {
             <Text style={styles.heading}>IDR 12.289.000</Text>
           </View>
           <View style={styles.orderBtnContainer}>
-            <Button buttonType='normal'>
+            <Button buttonType="normal">
               {/* <Link href={{ pathname: "tabs", params: { name: "Tabs" } }}> */}
               Order Now
               {/* </Link> */}
@@ -113,9 +113,9 @@ const styles = StyleSheet.create({
   },
   details: {
     width: "100%",
-    height: 360,
+    height: 400,
     position: "absolute",
-    bottom: -340,
+    bottom: "-80%",
     backgroundColor: "#fff",
     borderTopStartRadius: 24,
     borderTopEndRadius: 24,

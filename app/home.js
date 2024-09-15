@@ -65,15 +65,16 @@ const Home = () => {
     { key: "third", title: "Recommended" },
   ]);
 
-  const renderTabBar = props => (
+  const renderTabBar = (props) => (
     <TabBar
       {...props}
       indicatorStyle={{ backgroundColor: "#020202" }}
       style={{
         backgroundColor: "#fff",
       }}
-      activeColor='#020202'
-      inactiveColor='#8D92A3'
+      activeColor="#020202"
+      inactiveColor="#8D92A3"
+      labelStyle={{ fontSize: 12 }}
     />
   );
 
@@ -140,9 +141,6 @@ const styles = StyleSheet.create({
   title: {
     color: "#8D92A3",
     fontSize: 14,
-    fontStyle: "normal",
-    fontWeight: "medium",
-    fontFamily: "Poppins_400Regular",
   },
   itemsContainer: {
     paddingHorizontal: 24,

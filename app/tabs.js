@@ -1,6 +1,7 @@
 import { StyleSheet, View } from "react-native";
 import { createBottomTabNavigator } from "@react-navigation/bottom-tabs";
 import { Stack } from "expo-router";
+import Ionicons from "@expo/vector-icons/Ionicons";
 
 import Order from "./order";
 import Profile from "./profile";
@@ -19,30 +20,36 @@ const Tabs = () => {
           headerShown: false,
         }}
       />
-      <Tab.Navigator initialRouteName='Home' backBehavior='order'>
-        {}
+      <Tab.Navigator
+        initialRouteName="Home"
+        screenOptions={{
+          tabBarActiveTintColor: "#EB0029",
+          headerShown: false,
+        }}
+        backBehavior="order"
+      >
         <Tab.Screen
           options={{
-            tabBarShowLabel: false,
+            tabBarShowLabel: true,
             tabBarIcon: () => <HomeIcon width={32} height={32} />,
           }}
-          name='Home'
+          name="Home"
           component={Home}
         />
         <Tab.Screen
           options={{
-            tabBarShowLabel: false,
+            tabBarShowLabel: true,
             tabBarIcon: () => <OrderIcon width={32} height={32} />,
           }}
-          name='Order'
+          name="Order"
           component={Order}
         />
         <Tab.Screen
           options={{
-            tabBarShowLabel: false,
+            tabBarShowLabel: true,
             tabBarIcon: () => <ProfileIcon width={32} height={32} />,
           }}
-          name='Profile'
+          name="Profile"
           component={Profile}
         />
       </Tab.Navigator>
