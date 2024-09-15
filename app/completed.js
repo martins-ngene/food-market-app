@@ -3,8 +3,11 @@ import { Stack, Link } from "expo-router";
 
 import { Button } from "../components/buttons";
 import { icons } from "../icons";
+// import CompletedImage from "../assets/complete_signup.svg"
+// import SuccessOrder from "../assets/success_order.svg"
+import OrderEmpty from "../assets/order_empty.svg"
 
-export default function SignUp() {
+export default function Completed() {
   return (
     <View style={styles.container}>
       <Stack.Screen
@@ -12,8 +15,8 @@ export default function SignUp() {
           headerShown: false,
         }}
       />
-      <Image style={styles.image} source={icons.completeSignUp} />
-
+      {/* <Image style={styles.image} source={icons.completeSignUp} /> */}
+      <OrderEmpty width={220} height={300} />
       <Text style={styles.header}>Yeay! Completed</Text>
 
       <Text style={styles.text}>
@@ -52,7 +55,7 @@ const styles = StyleSheet.create({
     height: 290,
   },
   header: {
-    marginTop: 30,
+    marginTop: 10,
     color: "#020202",
     textAlign: "center",
     fontSize: 20,

@@ -108,6 +108,7 @@ const Home = () => {
         renderScene={renderScene}
         onIndexChange={setIndex}
         initialLayout={{ width: layout.width }}
+        style={styles.title}
       />
       {/* </View> */}
     </View>
@@ -120,7 +121,7 @@ const styles = StyleSheet.create({
   container: {
     flex: 1,
     backgroundColor: "#fff",
-    paddingTop: 30,
+    paddingTop: 50,
   },
   header: {
     color: "#020202",
@@ -130,6 +131,13 @@ const styles = StyleSheet.create({
     fontFamily: "Poppins_400Regular",
   },
   text: {
+    color: "#8D92A3",
+    fontSize: 14,
+    fontStyle: "normal",
+    fontWeight: "medium",
+    fontFamily: "Poppins_400Regular",
+  },
+  title: {
     color: "#8D92A3",
     fontSize: 14,
     fontStyle: "normal",

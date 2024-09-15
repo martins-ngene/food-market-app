@@ -72,8 +72,7 @@ const Order = () => {
         options={{
           title: params.name,
           headerTitle: () => (
-            <Header
-              onPress={() => navigation.goBack()}
+            <Header              onPress={() => navigation.goBack()}
               headerText='Your Orders'
               subText='Wait for the best meal'
               isBackBtn={false}

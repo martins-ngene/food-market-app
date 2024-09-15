@@ -6,7 +6,7 @@ import { icons } from "../../icons";
 const ProductCard = () => {
   const [rating, setRating] = useState(0);
   return (
-    <View style={styles.card}>
+    <View style={styles.card} >
       <Image style={styles.cardImg} source={icons.card} />
       <View style={styles.cardInfo}>
         <Text style={styles.cardHeader}>Cherry Healthy {rating}</Text>
@@ -25,15 +25,17 @@ export default ProductCard;
 
 const styles = StyleSheet.create({
   card: {
-    marginRight: 24,
+    marginVertical: 12,
+    marginRight: 12,
+    marginLeft: 6,
     width: 200,
-    height: 210,
+    height: 220,
     borderRadius: 8,
-    borderColor: "#000",
-    borderWidth: 0.5,
-  },
+    backgroundColor: "#fff",
+    shadowColor: '#000', 
+    elevation: 4,
   // shadowProp: {
-  // shadowColor: "#8D92A3",
+  // shadowColor: "#000",
   // shadowOpacity: 0.1,
   // shadowOffset: { width: -2, height: 4 },
   // shadowRadius: 1,
@@ -42,6 +44,7 @@ const styles = StyleSheet.create({
   // shadowRadius: 3,
   // elevation: 0.4,
   // },
+},
   cardImg: {
     width: 200,
     height: 140,
